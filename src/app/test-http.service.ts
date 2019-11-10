@@ -1,12 +1,17 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
-import { throwError, Observable } from 'rxjs';
+import { throwError, Observable, Subject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class TestHttpService {
+
+
 
   constructor(private http: HttpClient) { }
 
@@ -16,9 +21,9 @@ export class TestHttpService {
     return this.http.get<Post[]>(this.urlBasePost);
   }
 
-  push_Post(newPost: Post) {
+  /*push_Post(newPost: Post) {
     return this.http.post(this.urlBasePost, newPost);
-  }
+  }*/
 
 
 
